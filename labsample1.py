@@ -14,13 +14,12 @@ import csv
 #              or None if workouts is empty              #
 ##########################################################
 def get_longest_workout(workouts):
-    
-    if len(workouts) == 0:
+    if len(workouts) ==0:
         return None
     longest = workouts[0]
     for item in workouts:
-        if item["duration"] > longest["duration"]:
-            longest = item
+        if item['duration'] > longest['duration']:
+            longest = item    
 
     return longest
 
@@ -49,12 +48,11 @@ def calc_total_duration(workouts):
 def calc_average_duration(workouts):
     average = 0
     total = 0
-    for item in workouts:
-        total += item['duration']
     # Add your implementation from here
     #HINT: Use calc_total_duration(workouts) and len(workouts)
-    average = total / len(workouts)
-
+    for item in workouts:
+        total += item['duration']
+        average = total/len(workouts)
     return average
 
 #--------- End of Functions to be implemented for Practice Lab 1 -----------------------
